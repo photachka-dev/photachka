@@ -19,10 +19,10 @@ export default function LoginPage() {
     setLoading(true);
     try {
       await signIn(email, password);
-      toast.success("Logged in successfully");
+      toast.success("Uspješna prijava");
       navigate("/admin");
     } catch (err: any) {
-      toast.error(err.message || "Login failed");
+      toast.error(err.message || "Prijava nije uspjela");
     } finally {
       setLoading(false);
     }
@@ -35,7 +35,7 @@ export default function LoginPage() {
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-sm"
       >
-        <h1 className="font-heading text-3xl text-center mb-8">Admin Login</h1>
+        <h1 className="font-heading text-3xl text-center mb-8">Admin Prijava</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
             type="email"
@@ -46,13 +46,13 @@ export default function LoginPage() {
           />
           <Input
             type="password"
-            placeholder="Password"
+            placeholder="Lozinka"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
           <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Sign In"}
+            {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Prijavi se"}
           </Button>
         </form>
       </motion.div>

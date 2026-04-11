@@ -2,9 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 import { Camera } from "lucide-react";
 
 const navItems = [
-  { label: "Home", path: "/" },
-  { label: "Gallery", path: "/gallery" },
-  { label: "Contact", path: "/contact" },
+  { label: "Početna", path: "/" },
+  { label: "Galerija", path: "/gallery" },
+  { label: "Kontakt", path: "/contact" },
 ];
 
 export default function Navbar() {

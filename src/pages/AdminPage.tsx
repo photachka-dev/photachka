@@ -21,9 +21,9 @@ function AlbumManager({ albumId, albumName }: { albumId: string; albumName: stri
 
     try {
       await uploadPhotos.mutateAsync({ albumId, files });
-      toast.success(`Uploaded ${files.length} photo(s)`);
+      toast.success(`Uploadovano ${files.length} fotografija`);
     } catch {
-      toast.error("Failed to upload photos");
+      toast.error("Greška pri uploadu fotografija");
     }
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
@@ -31,9 +31,9 @@ function AlbumManager({ albumId, albumName }: { albumId: string; albumName: stri
   const handleDeletePhoto = async (photo: any) => {
     try {
       await deletePhoto.mutateAsync(photo);
-      toast.success("Photo deleted");
+      toast.success("Fotografija obrisana");
     } catch {
-      toast.error("Failed to delete photo");
+      toast.error("Greška pri brisanju fotografije");
     }
   };
 
@@ -41,7 +41,7 @@ function AlbumManager({ albumId, albumName }: { albumId: string; albumName: stri
     <div className="border-t pt-4 mt-4">
       <div className="flex items-center justify-between mb-4">
         <h3 className="font-medium text-sm text-muted-foreground">
-          Photos in "{albumName}"
+          Fotografije u "{albumName}"
         </h3>
         <div>
           <input
@@ -71,7 +71,7 @@ function AlbumManager({ albumId, albumName }: { albumId: string; albumName: stri
       {isLoading && <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />}
 
       {photos && photos.length === 0 && (
-        <p className="text-sm text-muted-foreground">No photos yet.</p>
+        <p className="text-sm text-muted-foreground">Još nema fotografija.</p>
       )}
 
       {photos && photos.length > 0 && (
@@ -112,20 +112,20 @@ export default function AdminPage() {
     try {
       await createAlbum.mutateAsync(newAlbumName.trim());
       setNewAlbumName("");
-      toast.success("Album created");
+      toast.success("Album kreiran");
     } catch {
-      toast.error("Failed to create album");
+      toast.error("Greška pri kreiranju albuma");
     }
   };
 
   const handleDeleteAlbum = async (id: string) => {
-    if (!confirm("Delete this album and all its photos?")) return;
+    if (!confirm("Obrisati ovaj album i sve njegove fotografije?")) return;
     try {
       await deleteAlbum.mutateAsync(id);
       if (expandedAlbum === id) setExpandedAlbum(null);
-      toast.success("Album deleted");
+      toast.success("Album obrisan");
     } catch {
-      toast.error("Failed to delete album");
+      toast.error("Greška pri brisanju albuma");
     }
   };
 
@@ -140,7 +140,7 @@ export default function AdminPage() {
         <div className="container flex items-center justify-between h-16">
           <h1 className="font-heading text-xl">Admin Panel</h1>
           <Button variant="ghost" size="sm" onClick={handleSignOut}>
-            <LogOut className="w-4 h-4 mr-2" /> Sign Out
+            <LogOut className="w-4 h-4 mr-2" /> Odjavi se
           </Button>
         </div>
       </header>
@@ -151,20 +151,20 @@ export default function AdminPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          {/* Create album */}
+          {/* Kreiraj album */}
           <form onSubmit={handleCreateAlbum} className="flex gap-3 mb-8">
             <Input
-              placeholder="New album name..."
+              placeholder="Naziv novog albuma..."
               value={newAlbumName}
               onChange={(e) => setNewAlbumName(e.target.value)}
               className="flex-1"
             />
             <Button type="submit" disabled={createAlbum.isPending}>
-              <Plus className="w-4 h-4 mr-2" /> Create
+              <Plus className="w-4 h-4 mr-2" /> Kreiraj
             </Button>
           </form>
 
-          {/* Albums list */}
+          {/* Lista albuma */}
           {isLoading && (
             <div className="flex justify-center py-12">
               <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" />
@@ -173,7 +173,7 @@ export default function AdminPage() {
 
           {albums && albums.length === 0 && (
             <p className="text-center text-muted-foreground py-12">
-              No albums yet. Create one above.
+              Još nema albuma. Kreirajte jedan iznad.
             </p>
           )}
 
@@ -195,7 +195,7 @@ export default function AdminPage() {
                     <div>
                       <h2 className="font-heading text-lg">{album.name}</h2>
                       <p className="text-xs text-muted-foreground">
-                        {new Date(album.created_at).toLocaleDateString()}
+                        {new Date(album.created_at).toLocaleDateString("bs-BA")}
                       </p>
                     </div>
                   </button>
