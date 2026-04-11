@@ -28,7 +28,7 @@ export default function AlbumDetailPage() {
             to="/gallery"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
           >
-            <ArrowLeft className="w-4 h-4" /> Back to Gallery
+            <ArrowLeft className="w-4 h-4" /> Nazad na Galeriju
           </Link>
 
           {isLoading && (
@@ -45,14 +45,14 @@ export default function AlbumDetailPage() {
             >
               <h1 className="font-heading text-4xl md:text-5xl mb-2">{album.name}</h1>
               <p className="text-muted-foreground mb-12">
-                {photos?.length ?? 0} photo{(photos?.length ?? 0) !== 1 ? "s" : ""}
+                {photos?.length ?? 0} fotografij{(photos?.length ?? 0) === 1 ? "a" : "e"}
               </p>
             </motion.div>
           )}
 
           {photos && photos.length === 0 && (
             <p className="text-center text-muted-foreground py-20">
-              No photos in this album yet.
+              Još nema fotografija u ovom albumu.
             </p>
           )}
 

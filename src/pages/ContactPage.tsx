@@ -16,9 +16,9 @@ export default function ContactPage() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h1 className="font-heading text-4xl md:text-5xl mb-4">Get in Touch</h1>
+            <h1 className="font-heading text-4xl md:text-5xl mb-4">Kontaktirajte Me</h1>
             <p className="text-muted-foreground mb-12 leading-relaxed">
-              Interested in working together? I'd love to hear from you.
+              Zainteresirani ste za saradnju? Rado bih čuo/čula od vas.
             </p>
 
             <div className="space-y-6">
@@ -30,7 +30,7 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center justify-center gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5" />
-                <span>New York, NY</span>
+                <span>Sarajevo, BiH</span>
               </div>
             </div>
           </motion.div>

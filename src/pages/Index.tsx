@@ -13,7 +13,7 @@ export default function Index() {
       <main className="flex-1">
         {/* Hero */}
         <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-foreground/5" />
+          <div className="absolute inset-0 bg-primary/5" />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -21,24 +21,24 @@ export default function Index() {
             className="relative z-10 text-center px-4 max-w-3xl"
           >
             <h1 className="font-heading text-5xl md:text-7xl tracking-tight leading-tight">
-              Capturing Moments,
+              Hvatam Trenutke,
               <br />
-              <span className="text-muted-foreground">Telling Stories</span>
+              <span className="text-muted-foreground">Pričam Priče</span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              A curated collection of photographs exploring light, shadow, and the beauty found in everyday moments.
+              Pažljivo odabrana kolekcija fotografija koja istražuje svjetlost, sjenu i ljepotu pronađenu u svakodnevnim trenucima.
             </p>
             <div className="mt-10">
               <Button asChild size="lg" className="gap-2">
                 <Link to="/gallery">
-                  View Gallery <ArrowRight className="w-4 h-4" />
+                  Pogledaj Galeriju <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
             </div>
           </motion.div>
         </section>
 
-        {/* About section */}
+        {/* O meni */}
         <section className="py-24 border-t">
           <div className="container max-w-2xl text-center">
             <motion.div
@@ -47,11 +47,11 @@ export default function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-heading text-3xl md:text-4xl mb-6">About</h2>
+              <h2 className="font-heading text-3xl md:text-4xl mb-6">O Meni</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Welcome to my photography portfolio. I specialize in capturing authentic moments — 
-                from sweeping landscapes to intimate portraits. Each photograph is a story waiting 
-                to be discovered. Browse through my albums and let the images speak for themselves.
+                Dobrodošli u moj fotografski portfolio. Specijaliziram se za hvatanje autentičnih trenutaka — 
+                od pejzaža koji oduzimaju dah do intimnih portreta. Svaka fotografija je priča koja čeka 
+                da bude otkrivena. Pregledajte moje albume i pustite da slike govore same za sebe.
               </p>
             </motion.div>
           </div>

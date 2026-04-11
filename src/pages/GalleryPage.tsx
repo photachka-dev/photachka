@@ -19,8 +19,8 @@ export default function GalleryPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="font-heading text-4xl md:text-5xl mb-2">Gallery</h1>
-            <p className="text-muted-foreground mb-12">Browse through the albums</p>
+            <h1 className="font-heading text-4xl md:text-5xl mb-2">Galerija</h1>
+            <p className="text-muted-foreground mb-12">Pregledajte albume</p>
           </motion.div>
 
           {isLoading && (
@@ -30,11 +30,11 @@ export default function GalleryPage() {
           )}
 
           {error && (
-            <p className="text-center text-destructive py-20">Failed to load albums.</p>
+            <p className="text-center text-destructive py-20">Greška pri učitavanju albuma.</p>
           )}
 
           {albums && albums.length === 0 && (
-            <p className="text-center text-muted-foreground py-20">No albums yet.</p>
+            <p className="text-center text-muted-foreground py-20">Još nema albuma.</p>
           )}
 
           {albums && albums.length > 0 && (
