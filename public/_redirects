@@ -1,0 +1,2 @@
+# SPA fallback: sve rute (npr. /admin, /gallery/…) serviraju index.html za React Router
+/*    /index.html   200
