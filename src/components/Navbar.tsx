@@ -15,7 +15,7 @@ export default function Navbar() {
       <nav className="container flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2 font-heading text-xl tracking-tight">
           <Camera className="w-5 h-5" />
-          Portfolio
+          Photachka
         </Link>
         <ul className="flex items-center gap-8">
           {navItems.map((item) => (
