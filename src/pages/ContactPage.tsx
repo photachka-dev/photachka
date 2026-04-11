@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Instagram } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -23,14 +23,20 @@ export default function ContactPage() {
 
             <div className="space-y-6">
               <div className="flex items-center justify-center gap-3 text-muted-foreground">
+                <Instagram className="w-5 h-5" />
+                <a href="https://instagram.com/photachka/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                  @photachka
+                </a>
+              </div>
+              <div className="flex items-center justify-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5" />
-                <a href="mailto:hello@example.com" className="hover:text-foreground transition-colors">
-                  hello@example.com
+                <a href="mailto:photachka@gmail.com" className="hover:text-foreground transition-colors">
+                  photachka@gmail.com
                 </a>
               </div>
               <div className="flex items-center justify-center gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5" />
-                <span>Sarajevo, BiH</span>
+                <span>Sarajevo, BiH · Radim i na drugim lokacijama</span>
               </div>
             </div>
           </motion.div>
