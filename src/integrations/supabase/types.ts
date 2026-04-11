@@ -18,20 +18,26 @@ export type Database = {
         Row: {
           cover_url: string | null
           created_at: string
+          display_order: number
           id: string
           name: string
+          name_en: string
         }
         Insert: {
           cover_url?: string | null
           created_at?: string
+          display_order?: number
           id?: string
           name: string
+          name_en: string
         }
         Update: {
           cover_url?: string | null
           created_at?: string
+          display_order?: number
           id?: string
           name?: string
+          name_en?: string
         }
         Relationships: []
       }
@@ -39,20 +45,26 @@ export type Database = {
         Row: {
           album_id: string
           created_at: string
+          featured_order: number | null
           id: string
           image_url: string
+          sort_order: number
         }
         Insert: {
           album_id: string
           created_at?: string
+          featured_order?: number | null
           id?: string
           image_url: string
+          sort_order?: number
         }
         Update: {
           album_id?: string
           created_at?: string
+          featured_order?: number | null
           id?: string
           image_url?: string
+          sort_order?: number
         }
         Relationships: [
           {
@@ -63,6 +75,24 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      site_settings: {
+        Row: {
+          home_hero_image_url: string | null
+          id: number
+          updated_at: string
+        }
+        Insert: {
+          home_hero_image_url?: string | null
+          id?: number
+          updated_at?: string
+        }
+        Update: {
+          home_hero_image_url?: string | null
+          id?: number
+          updated_at?: string
+        }
+        Relationships: []
       }
     }
     Views: {
