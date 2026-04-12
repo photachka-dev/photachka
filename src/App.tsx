@@ -14,6 +14,7 @@ import AdminLayout from "./pages/admin/AdminLayout";
 import AdminAlbumsPage from "./pages/admin/AdminAlbumsPage";
 import AdminHomeHeroPage from "./pages/admin/AdminHomeHeroPage";
 import AdminFeaturedPage from "./pages/admin/AdminFeaturedPage";
+import AdminSiteTextPage from "./pages/admin/AdminSiteTextPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
 
@@ -67,6 +68,7 @@ function AppRoutes() {
         <Route path="albums" element={<AdminAlbumsPage />} />
         <Route path="featured" element={<AdminFeaturedPage />} />
         <Route path="homepage" element={<AdminHomeHeroPage />} />
+        <Route path="texts" element={<AdminSiteTextPage />} />
       </Route>
       <Route
         path="*"

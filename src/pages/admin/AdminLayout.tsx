@@ -58,6 +58,9 @@ export default function AdminLayout() {
           <NavLink to="/admin/homepage" className={navClass}>
             {m.admin.navHomepage}
           </NavLink>
+          <NavLink to="/admin/texts" className={navClass}>
+            {m.admin.navSiteText}
+          </NavLink>
         </nav>
         <Outlet />
       </main>

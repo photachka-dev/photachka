@@ -2,12 +2,17 @@ import { motion } from "framer-motion";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { Tables } from "@/integrations/supabase/types";
 import { useI18n } from "@/contexts/LanguageContext";
+import { featuredSectionLayout } from "@/lib/homeGridLayout";
+import { siteLine } from "@/lib/siteCopy";
+import { cn } from "@/lib/utils";
 
 type Photo = Tables<"photos">;
+type SiteSettings = Tables<"site_settings">;
 
 interface FeaturedWorkProps {
   photos: Photo[] | undefined;
   isLoading: boolean;
+  siteSettings?: SiteSettings | null;
 }
 
 const container = {
@@ -26,8 +31,28 @@ const item = {
   },
 };
 
-export default function FeaturedWork({ photos, isLoading }: FeaturedWorkProps) {
-  const { m } = useI18n();
+export default function FeaturedWork({ photos, isLoading, siteSettings }: FeaturedWorkProps) {
+  const { m, locale } = useI18n();
+  const kicker = siteLine(
+    locale,
+    siteSettings?.featured_kicker_bs,
+    siteSettings?.featured_kicker_en,
+    m.featured.kicker,
+  );
+  const title = siteLine(
+    locale,
+    siteSettings?.featured_title_bs,
+    siteSettings?.featured_title_en,
+    m.featured.title,
+  );
+  const subtitle = siteLine(
+    locale,
+    siteSettings?.featured_subtitle_bs,
+    siteSettings?.featured_subtitle_en,
+    m.featured.subtitle,
+  );
+
+  const listLayout = featuredSectionLayout(siteSettings ?? null);
 
   return (
     <section id="featured" className="scroll-mt-20 border-t border-border/40 py-16 sm:scroll-mt-24 sm:py-20 md:py-32">
@@ -35,21 +60,27 @@ export default function FeaturedWork({ photos, isLoading }: FeaturedWorkProps) {
         <div className="mb-10 flex flex-col gap-4 sm:mb-16 md:mb-20 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-muted-foreground sm:text-[11px] sm:tracking-[0.35em]">
-              {m.featured.kicker}
+              {kicker}
             </p>
             <h2 className="mt-2 font-serif text-3xl font-normal min-[380px]:text-4xl md:mt-3 md:text-5xl">
-              {m.featured.title}
+              {title}
             </h2>
           </div>
           <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
-            {m.featured.subtitle}
+            {subtitle}
           </p>
         </div>
 
         {isLoading && (
-          <div className="grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 md:grid-cols-3 md:gap-4">
+          <div className={listLayout.containerClass}>
             {Array.from({ length: 6 }).map((_, i) => (
-              <Skeleton key={i} className="aspect-[4/5] w-full rounded-none bg-muted" />
+              <Skeleton
+                key={i}
+                className={cn(
+                  "aspect-[4/5] rounded-none bg-muted",
+                  listLayout.itemClass || "w-full",
+                )}
+              />
             ))}
           </div>
         )}
@@ -64,13 +95,16 @@ export default function FeaturedWork({ photos, isLoading }: FeaturedWorkProps) {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
-            className="grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 md:grid-cols-3 md:gap-4"
+            className={listLayout.containerClass}
           >
             {photos.map((photo) => (
                 <motion.div
                   key={photo.id}
                   variants={item}
-                  className="group relative aspect-[4/5] cursor-default overflow-hidden bg-muted"
+                  className={cn(
+                    "group relative aspect-[4/5] cursor-default overflow-hidden bg-muted",
+                    listLayout.itemClass,
+                  )}
                 >
                   <img
                     src={photo.image_url}

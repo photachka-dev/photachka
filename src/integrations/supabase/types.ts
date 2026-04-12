@@ -78,17 +78,221 @@ export type Database = {
       }
       site_settings: {
         Row: {
+          about_kicker_bs: string | null
+          about_kicker_en: string | null
+          about_p1_bs: string | null
+          about_p1_en: string | null
+          about_p2_bs: string | null
+          about_p2_en: string | null
+          about_title_bs: string | null
+          about_title_en: string | null
+          albums_empty_bs: string | null
+          albums_empty_en: string | null
+          albums_kicker_bs: string | null
+          albums_kicker_en: string | null
+          albums_open_series_bs: string | null
+          albums_open_series_en: string | null
+          albums_title_bs: string | null
+          albums_title_en: string | null
+          albums_view_all_bs: string | null
+          albums_view_all_en: string | null
+          albums_grid_columns: number
+          albums_last_row_align: string
+          contact_instagram_label_bs: string | null
+          contact_instagram_label_en: string | null
+          contact_instagram_url: string | null
+          contact_intro_bs: string | null
+          contact_intro_en: string | null
+          contact_kicker_bs: string | null
+          contact_kicker_en: string | null
+          contact_label_email_bs: string | null
+          contact_label_email_en: string | null
+          contact_label_message_bs: string | null
+          contact_label_message_en: string | null
+          contact_label_name_bs: string | null
+          contact_label_name_en: string | null
+          contact_location_bs: string | null
+          contact_location_en: string | null
+          contact_mail_subject_fallback_bs: string | null
+          contact_mail_subject_fallback_en: string | null
+          contact_mail_subject_prefix_bs: string | null
+          contact_mail_subject_prefix_en: string | null
+          contact_ph_email_bs: string | null
+          contact_ph_email_en: string | null
+          contact_ph_message_bs: string | null
+          contact_ph_message_en: string | null
+          contact_ph_name_bs: string | null
+          contact_ph_name_en: string | null
+          contact_public_email: string | null
+          contact_submit_bs: string | null
+          contact_submit_en: string | null
+          contact_title_bs: string | null
+          contact_title_en: string | null
+          featured_kicker_bs: string | null
+          featured_kicker_en: string | null
+          featured_subtitle_bs: string | null
+          featured_subtitle_en: string | null
+          featured_title_bs: string | null
+          featured_title_en: string | null
+          featured_grid_columns: number
+          featured_last_row_align: string
+          hero_category_bs: string | null
+          hero_category_en: string | null
+          hero_cta_work_bs: string | null
+          hero_cta_work_en: string | null
+          hero_scroll_hint_bs: string | null
+          hero_scroll_hint_en: string | null
+          hero_tagline_bs: string | null
+          hero_tagline_en: string | null
           home_hero_image_url: string | null
+          home_hero_interval_seconds: number
+          home_hero_slides: Json
           id: number
           updated_at: string
         }
         Insert: {
+          about_kicker_bs?: string | null
+          about_kicker_en?: string | null
+          about_p1_bs?: string | null
+          about_p1_en?: string | null
+          about_p2_bs?: string | null
+          about_p2_en?: string | null
+          about_title_bs?: string | null
+          about_title_en?: string | null
+          albums_empty_bs?: string | null
+          albums_empty_en?: string | null
+          albums_kicker_bs?: string | null
+          albums_kicker_en?: string | null
+          albums_open_series_bs?: string | null
+          albums_open_series_en?: string | null
+          albums_title_bs?: string | null
+          albums_title_en?: string | null
+          albums_view_all_bs?: string | null
+          albums_view_all_en?: string | null
+          albums_grid_columns?: number
+          albums_last_row_align?: string
+          contact_instagram_label_bs?: string | null
+          contact_instagram_label_en?: string | null
+          contact_instagram_url?: string | null
+          contact_intro_bs?: string | null
+          contact_intro_en?: string | null
+          contact_kicker_bs?: string | null
+          contact_kicker_en?: string | null
+          contact_label_email_bs?: string | null
+          contact_label_email_en?: string | null
+          contact_label_message_bs?: string | null
+          contact_label_message_en?: string | null
+          contact_label_name_bs?: string | null
+          contact_label_name_en?: string | null
+          contact_location_bs?: string | null
+          contact_location_en?: string | null
+          contact_mail_subject_fallback_bs?: string | null
+          contact_mail_subject_fallback_en?: string | null
+          contact_mail_subject_prefix_bs?: string | null
+          contact_mail_subject_prefix_en?: string | null
+          contact_ph_email_bs?: string | null
+          contact_ph_email_en?: string | null
+          contact_ph_message_bs?: string | null
+          contact_ph_message_en?: string | null
+          contact_ph_name_bs?: string | null
+          contact_ph_name_en?: string | null
+          contact_public_email?: string | null
+          contact_submit_bs?: string | null
+          contact_submit_en?: string | null
+          contact_title_bs?: string | null
+          contact_title_en?: string | null
+          featured_kicker_bs?: string | null
+          featured_kicker_en?: string | null
+          featured_subtitle_bs?: string | null
+          featured_subtitle_en?: string | null
+          featured_title_bs?: string | null
+          featured_title_en?: string | null
+          featured_grid_columns?: number
+          featured_last_row_align?: string
+          hero_category_bs?: string | null
+          hero_category_en?: string | null
+          hero_cta_work_bs?: string | null
+          hero_cta_work_en?: string | null
+          hero_scroll_hint_bs?: string | null
+          hero_scroll_hint_en?: string | null
+          hero_tagline_bs?: string | null
+          hero_tagline_en?: string | null
           home_hero_image_url?: string | null
+          home_hero_interval_seconds?: number
+          home_hero_slides?: Json
           id?: number
           updated_at?: string
         }
         Update: {
+          about_kicker_bs?: string | null
+          about_kicker_en?: string | null
+          about_p1_bs?: string | null
+          about_p1_en?: string | null
+          about_p2_bs?: string | null
+          about_p2_en?: string | null
+          about_title_bs?: string | null
+          about_title_en?: string | null
+          albums_empty_bs?: string | null
+          albums_empty_en?: string | null
+          albums_kicker_bs?: string | null
+          albums_kicker_en?: string | null
+          albums_open_series_bs?: string | null
+          albums_open_series_en?: string | null
+          albums_title_bs?: string | null
+          albums_title_en?: string | null
+          albums_view_all_bs?: string | null
+          albums_view_all_en?: string | null
+          albums_grid_columns?: number
+          albums_last_row_align?: string
+          contact_instagram_label_bs?: string | null
+          contact_instagram_label_en?: string | null
+          contact_instagram_url?: string | null
+          contact_intro_bs?: string | null
+          contact_intro_en?: string | null
+          contact_kicker_bs?: string | null
+          contact_kicker_en?: string | null
+          contact_label_email_bs?: string | null
+          contact_label_email_en?: string | null
+          contact_label_message_bs?: string | null
+          contact_label_message_en?: string | null
+          contact_label_name_bs?: string | null
+          contact_label_name_en?: string | null
+          contact_location_bs?: string | null
+          contact_location_en?: string | null
+          contact_mail_subject_fallback_bs?: string | null
+          contact_mail_subject_fallback_en?: string | null
+          contact_mail_subject_prefix_bs?: string | null
+          contact_mail_subject_prefix_en?: string | null
+          contact_ph_email_bs?: string | null
+          contact_ph_email_en?: string | null
+          contact_ph_message_bs?: string | null
+          contact_ph_message_en?: string | null
+          contact_ph_name_bs?: string | null
+          contact_ph_name_en?: string | null
+          contact_public_email?: string | null
+          contact_submit_bs?: string | null
+          contact_submit_en?: string | null
+          contact_title_bs?: string | null
+          contact_title_en?: string | null
+          featured_kicker_bs?: string | null
+          featured_kicker_en?: string | null
+          featured_subtitle_bs?: string | null
+          featured_subtitle_en?: string | null
+          featured_title_bs?: string | null
+          featured_title_en?: string | null
+          featured_grid_columns?: number
+          featured_last_row_align?: string
+          hero_category_bs?: string | null
+          hero_category_en?: string | null
+          hero_cta_work_bs?: string | null
+          hero_cta_work_en?: string | null
+          hero_scroll_hint_bs?: string | null
+          hero_scroll_hint_en?: string | null
+          hero_tagline_bs?: string | null
+          hero_tagline_en?: string | null
           home_hero_image_url?: string | null
+          home_hero_interval_seconds?: number
+          home_hero_slides?: Json
           id?: number
           updated_at?: string
         }

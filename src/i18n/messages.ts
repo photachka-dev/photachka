@@ -2,19 +2,14 @@ export type Locale = "bs" | "en";
 
 export type Messages = {
   seo: { title: string };
-  nav: {
-    about: string;
-    gallery: string;
-    contact: string;
-  };
   navAria: { openMenu: string };
   sheet: { menuTitle: string };
-  footer: { copyrightNote: string; gallery: string; inquiries: string; studio: string };
+  footer: { brand: string; rights: string };
   lang: { bs: string; en: string };
   hero: { category: string; tagline: string; ctaWork: string; scrollHint: string };
   featured: { kicker: string; title: string; subtitle: string; empty: string };
   about: { kicker: string; title: string; p1: string; p2: string };
-  albumsSection: { kicker: string; title: string; viewAll: string; empty: string; openSeries: string };
+  albumsSection: { kicker: string; title: string; empty: string; openSeries: string };
   contact: {
     kicker: string;
     title: string;
@@ -29,6 +24,7 @@ export type Messages = {
     submit: string;
     mailSubjectPrefix: string;
     mailSubjectFallback: string;
+    instagramLinkLabel: string;
   };
   galleryPage: { kicker: string; title: string; subtitle: string; errorLoad: string; empty: string };
   albumDetail: { backToGallery: string; empty: string };
@@ -89,7 +85,10 @@ export type Messages = {
     navAlbums: string;
     navFeatured: string;
     navHomepage: string;
+    navSiteText: string;
+    siteTextPageTitle: string;
     homeHeroTitle: string;
+    homeHeroImageSection: string;
     homeHeroHint: string;
     homeHeroUpload: string;
     homeHeroRemove: string;
@@ -99,6 +98,30 @@ export type Messages = {
     homeHeroClearSuccess: string;
     homeHeroClearError: string;
     homeHeroConfirmRemove: string;
+    homeHeroIntervalLabel: string;
+    homeHeroIntervalHint: string;
+    homeHeroSlidesCount: string;
+    homeHeroSlideRemoveAria: string;
+    homeHeroMoveSlideUpAria: string;
+    homeHeroMoveSlideDownAria: string;
+    homeHeroClearAll: string;
+    homeHeroConfirmClearAll: string;
+    homeHeroMaxSlides: string;
+    homeHeroSlideRemoved: string;
+    homeHeroApplyInterval: string;
+    homeGridSectionTitle: string;
+    homeGridHint: string;
+    homeGridFeaturedTitle: string;
+    homeGridAlbumsTitle: string;
+    homeGridColumnsLabel: string;
+    homeGridLastRowLabel: string;
+    homeGridLastRowStart: string;
+    homeGridLastRowCenter: string;
+    homeGridCols2: string;
+    homeGridCols3: string;
+    homeGridCols4: string;
+    homeGridUpdated: string;
+    homeGridUpdateError: string;
     coverBadge: string;
     coverSetSuccess: string;
     coverSetError: string;
@@ -115,24 +138,57 @@ export type Messages = {
     featuredAdminMoveDownAria: string;
     featuredAdminRemoveAria: string;
     featuredSyncError: string;
+    homePageCopyHint: string;
+    homePageCopySave: string;
+    homePageCopySaved: string;
+    homePageCopySaveError: string;
+    copySectionHero: string;
+    copyHeroCategory: string;
+    copyHeroTagline: string;
+    copyHeroCta: string;
+    copyHeroScroll: string;
+    copySectionFeatured: string;
+    copyFeaturedKicker: string;
+    copyFeaturedTitle: string;
+    copyFeaturedSubtitle: string;
+    copySectionAbout: string;
+    copyAboutKicker: string;
+    copyAboutTitle: string;
+    copyAboutP1: string;
+    copyAboutP2: string;
+    copySectionAlbums: string;
+    copyAlbumsKicker: string;
+    copyAlbumsTitle: string;
+    copyAlbumsEmpty: string;
+    copyAlbumsOpenSeries: string;
+    copySectionContact: string;
+    copyContactKicker: string;
+    copyContactTitle: string;
+    copyContactIntro: string;
+    copyContactLocation: string;
+    copyContactLabelName: string;
+    copyContactLabelEmail: string;
+    copyContactLabelMessage: string;
+    copyContactPhName: string;
+    copyContactPhEmail: string;
+    copyContactPhMessage: string;
+    copyContactSubmit: string;
+    copyContactMailPrefix: string;
+    copyContactMailFallback: string;
+    copyContactPublicEmail: string;
+    copyContactInstagramUrl: string;
+    copyContactInstagramLabel: string;
   };
 };
 
 export const messages: Record<Locale, Messages> = {
   bs: {
     seo: { title: "Photachka — Fotografija" },
-    nav: {
-      about: "O meni",
-      gallery: "Galerija",
-      contact: "Kontakt",
-    },
     navAria: { openMenu: "Otvori meni" },
     sheet: { menuTitle: "Meni" },
     footer: {
-      copyrightNote: "Sva prava zadržana",
-      gallery: "Galerija",
-      inquiries: "Upiti",
-      studio: "Studio",
+      brand: "Photachka",
+      rights: "Sva prava zadržana",
     },
     lang: { bs: "BS", en: "EN" },
     hero: {
@@ -156,7 +212,6 @@ export const messages: Record<Locale, Messages> = {
     albumsSection: {
       kicker: "Kolekcije",
       title: "Albumi",
-      viewAll: "Pogledaj sve →",
       empty: "Albumi će se ovdje pojaviti kada se kreiraju u studiju.",
       openSeries: "Otvori seriju",
     },
@@ -175,6 +230,7 @@ export const messages: Record<Locale, Messages> = {
       submit: "Pošalji poruku",
       mailSubjectPrefix: "Upit s Photachka sajta — ",
       mailSubjectFallback: "posjetilac",
+      instagramLinkLabel: "Instagram",
     },
     galleryPage: {
       kicker: "Arhiva",
@@ -249,17 +305,45 @@ export const messages: Record<Locale, Messages> = {
       navAlbums: "Albumi",
       navFeatured: "Istaknuto",
       navHomepage: "Početna stranica",
-      homeHeroTitle: "Slika na početnoj",
+      navSiteText: "Tekstovi stranice",
+      siteTextPageTitle: "Tekstovi stranice",
+      homeHeroTitle: "Početna stranica",
+      homeHeroImageSection: "Pozadina heroa",
       homeHeroHint:
-        "Ova slika se prikazuje kao pozadina hero sekcije na početnoj stranici. Ako je nema, koristi se naslovna slika prvog albuma koji je ima, zatim prva istaknuta fotografija.",
-      homeHeroUpload: "Upload sliku",
-      homeHeroRemove: "Ukloni sliku",
-      homeHeroEmpty: "Još nema postavljene slike.",
-      homeHeroSuccess: "Slika početne stranice je ažurirana.",
-      homeHeroError: "Greška pri otpremanju slike početne stranice.",
-      homeHeroClearSuccess: "Slika početne stranice je uklonjena.",
-      homeHeroClearError: "Greška pri uklanjanju slike.",
-      homeHeroConfirmRemove: "Ukloniti sliku s početne stranice?",
+        "Do 6 slika u pozadini heroa; na početnoj se smjenjuju svakih nekoliko sekundi (više slika = blaga izmjena). Ako nema slika u studiju, koristi se naslovna slika prvog albuma, zatim prva istaknuta fotografija.",
+      homeHeroUpload: "Dodaj slike",
+      homeHeroRemove: "Ukloni ovu sliku",
+      homeHeroEmpty: "Još nema postavljenih slika.",
+      homeHeroSuccess: "Slike heroa su ažurirane.",
+      homeHeroError: "Greška pri otpremanju slika heroa.",
+      homeHeroClearSuccess: "Sve slike heroa su uklonjene.",
+      homeHeroClearError: "Greška pri uklanjanju slika.",
+      homeHeroConfirmRemove: "Ukloniti ovu sliku s heroa?",
+      homeHeroIntervalLabel: "Sekundi između slika",
+      homeHeroIntervalHint: "Od 3 do 120. Jedna slika = nema rotacije.",
+      homeHeroSlidesCount: "Slajdovi: {current} / {max}",
+      homeHeroSlideRemoveAria: "Ukloni sliku",
+      homeHeroMoveSlideUpAria: "Pomakni sliku gore",
+      homeHeroMoveSlideDownAria: "Pomakni sliku dolje",
+      homeHeroClearAll: "Ukloni sve",
+      homeHeroConfirmClearAll: "Ukloniti sve slike heroa sa skladišta?",
+      homeHeroMaxSlides: "Maksimalno je 6 slika.",
+      homeHeroSlideRemoved: "Slika je uklonjena.",
+      homeHeroApplyInterval: "Sačuvaj interval",
+      homeGridSectionTitle: "Raspored sekcija na početnoj",
+      homeGridHint:
+        "Kolone na širim ekranima; na užem prikazu ostaje jedan ili dva stupca. Ako zadnji red nije pun, možete ostaviti poravnanje s lijeva ili ga centrirati.",
+      homeGridFeaturedTitle: "Istaknuti radovi",
+      homeGridAlbumsTitle: "Albumi",
+      homeGridColumnsLabel: "Stavki u redu",
+      homeGridLastRowLabel: "Nepotpuni zadnji red",
+      homeGridLastRowStart: "Normalno (s lijeva)",
+      homeGridLastRowCenter: "Centrirano",
+      homeGridCols2: "2",
+      homeGridCols3: "3",
+      homeGridCols4: "4",
+      homeGridUpdated: "Raspored je sačuvan.",
+      homeGridUpdateError: "Greška pri čuvanju rasporeda.",
       coverBadge: "Glavna",
       coverSetSuccess: "Glavna slika albuma je postavljena.",
       coverSetError: "Greška pri postavljanju glavne slike.",
@@ -277,22 +361,56 @@ export const messages: Record<Locale, Messages> = {
       featuredAdminMoveDownAria: "Istaknuto dolje",
       featuredAdminRemoveAria: "Ukloni iz istaknutih",
       featuredSyncError: "Greška pri spremanju istaknutih radova.",
+      homePageCopyHint:
+        "Svi tekstovi ispod su opcionalni (hero, istaknuto, albumi, o meni, kontakt). Ako ostavite prazno, koristi se podrazumijevani prijevod za BS / EN na javnom sajtu. Otvorite samo sekciju koju uređujete; „Sačuvaj tekstove“ snima sve odjednom.",
+      homePageCopySave: "Sačuvaj tekstove",
+      homePageCopySaved: "Tekstovi su sačuvani.",
+      homePageCopySaveError: "Greška pri spremanju tekstova.",
+      copySectionHero: "Hero (naslovna)",
+      copyHeroCategory: "Mala oznaka iznad naslova (npr. Fotografija)",
+      copyHeroTagline: "Tagline ispod „Photachka“",
+      copyHeroCta: "Tekst glavnog gumba",
+      copyHeroScroll: "Tekst uz strelicu za skrol",
+      copySectionFeatured: "Istaknuti radovi",
+      copyFeaturedKicker: "Mala oznaka iznad naslova",
+      copyFeaturedTitle: "Naslov sekcije",
+      copyFeaturedSubtitle: "Podnaslov (desno na širokim ekranima)",
+      copySectionAbout: "O meni (#about)",
+      copyAboutKicker: "Mala oznaka",
+      copyAboutTitle: "Naslov",
+      copyAboutP1: "Prvi pasus",
+      copyAboutP2: "Drugi pasus",
+      copySectionAlbums: "Albumi (početna)",
+      copyAlbumsKicker: "Mala oznaka iznad naslova",
+      copyAlbumsTitle: "Naslov sekcije",
+      copyAlbumsEmpty: "Poruka kada nema albuma",
+      copyAlbumsOpenSeries: "Tekst na kartici pri hoveru (otvori seriju)",
+      copySectionContact: "Kontakt (#contact)",
+      copyContactKicker: "Mala oznaka",
+      copyContactTitle: "Naslov",
+      copyContactIntro: "Uvodni tekst (lijevo)",
+      copyContactLocation: "Lokacija (ispod e-pošte)",
+      copyContactLabelName: "Oznaka polja Ime",
+      copyContactLabelEmail: "Oznaka polja E-pošta",
+      copyContactLabelMessage: "Oznaka polja Poruka",
+      copyContactPhName: "Placeholder Ime",
+      copyContactPhEmail: "Placeholder E-pošta",
+      copyContactPhMessage: "Placeholder Poruka",
+      copyContactSubmit: "Tekst gumba za slanje",
+      copyContactMailPrefix: "Prefiks predmeta e-pošte (mailto)",
+      copyContactMailFallback: "Tekst ako ime nije uneseno (predmet)",
+      copyContactPublicEmail: "Javna e-adresa (prikaz i mailto forme)",
+      copyContactInstagramUrl: "Instagram — puni URL (npr. https://instagram.com/korisnik/)",
+      copyContactInstagramLabel: "Tekst Instagram linka (npr. Instagram)",
     },
   },
   en: {
     seo: { title: "Photachka — Photography" },
-    nav: {
-      about: "About",
-      gallery: "Gallery",
-      contact: "Contact",
-    },
     navAria: { openMenu: "Open menu" },
     sheet: { menuTitle: "Menu" },
     footer: {
-      copyrightNote: "All rights reserved",
-      gallery: "Gallery",
-      inquiries: "Inquiries",
-      studio: "Studio",
+      brand: "Photachka",
+      rights: "All rights reserved",
     },
     lang: { bs: "BS", en: "EN" },
     hero: {
@@ -316,7 +434,6 @@ export const messages: Record<Locale, Messages> = {
     albumsSection: {
       kicker: "Collections",
       title: "Albums",
-      viewAll: "View all →",
       empty: "Albums will appear here when created in the studio.",
       openSeries: "Open series",
     },
@@ -335,6 +452,7 @@ export const messages: Record<Locale, Messages> = {
       submit: "Send message",
       mailSubjectPrefix: "Inquiry from Photachka website — ",
       mailSubjectFallback: "visitor",
+      instagramLinkLabel: "Instagram",
     },
     galleryPage: {
       kicker: "Archive",
@@ -408,17 +526,45 @@ export const messages: Record<Locale, Messages> = {
       navAlbums: "Albums",
       navFeatured: "Featured",
       navHomepage: "Homepage",
-      homeHeroTitle: "Homepage image",
+      navSiteText: "Page text",
+      siteTextPageTitle: "Page text",
+      homeHeroTitle: "Home page",
+      homeHeroImageSection: "Hero background",
       homeHeroHint:
-        "This image is used as the hero background on the home page. If unset, the first album cover is used, then the first featured photo.",
-      homeHeroUpload: "Upload image",
-      homeHeroRemove: "Remove image",
-      homeHeroEmpty: "No homepage image set yet.",
-      homeHeroSuccess: "Homepage image updated.",
-      homeHeroError: "Could not upload homepage image.",
-      homeHeroClearSuccess: "Homepage image removed.",
-      homeHeroClearError: "Could not remove homepage image.",
-      homeHeroConfirmRemove: "Remove the homepage image?",
+        "Up to 6 hero background images; they rotate every few seconds on the home page. If none are set, the first album cover is used, then the first featured photo.",
+      homeHeroUpload: "Add images",
+      homeHeroRemove: "Remove this image",
+      homeHeroEmpty: "No hero images yet.",
+      homeHeroSuccess: "Hero images updated.",
+      homeHeroError: "Could not upload hero images.",
+      homeHeroClearSuccess: "All hero images removed.",
+      homeHeroClearError: "Could not remove hero images.",
+      homeHeroConfirmRemove: "Remove this hero image?",
+      homeHeroIntervalLabel: "Seconds between slides",
+      homeHeroIntervalHint: "3–120. A single image does not rotate.",
+      homeHeroSlidesCount: "Slides: {current} / {max}",
+      homeHeroSlideRemoveAria: "Remove image",
+      homeHeroMoveSlideUpAria: "Move image up",
+      homeHeroMoveSlideDownAria: "Move image down",
+      homeHeroClearAll: "Remove all",
+      homeHeroConfirmClearAll: "Remove all hero images from storage?",
+      homeHeroMaxSlides: "You can add at most 6 images.",
+      homeHeroSlideRemoved: "Image removed.",
+      homeHeroApplyInterval: "Save interval",
+      homeGridSectionTitle: "Home section layout",
+      homeGridHint:
+        "Columns on wider screens; narrow view stays one or two columns. If the last row is short, keep left alignment or center those items.",
+      homeGridFeaturedTitle: "Featured work",
+      homeGridAlbumsTitle: "Albums",
+      homeGridColumnsLabel: "Items per row",
+      homeGridLastRowLabel: "Incomplete last row",
+      homeGridLastRowStart: "Normal (from the left)",
+      homeGridLastRowCenter: "Centered",
+      homeGridCols2: "2",
+      homeGridCols3: "3",
+      homeGridCols4: "4",
+      homeGridUpdated: "Layout saved.",
+      homeGridUpdateError: "Could not save layout.",
       coverBadge: "Cover",
       coverSetSuccess: "Album cover updated.",
       coverSetError: "Could not set album cover.",
@@ -436,6 +582,47 @@ export const messages: Record<Locale, Messages> = {
       featuredAdminMoveDownAria: "Move featured down",
       featuredAdminRemoveAria: "Remove from featured",
       featuredSyncError: "Could not save featured work.",
+      homePageCopyHint:
+        "All fields below are optional (hero, featured, albums, about, contact). If left empty, the bundled translation for BS / EN is used on the public site. Expand only the section you’re editing; Save applies all sections at once.",
+      homePageCopySave: "Save copy",
+      homePageCopySaved: "Copy saved.",
+      homePageCopySaveError: "Could not save copy.",
+      copySectionHero: "Hero",
+      copyHeroCategory: "Small label above title (e.g. Photography)",
+      copyHeroTagline: "Tagline under “Photachka”",
+      copyHeroCta: "Primary button label",
+      copyHeroScroll: "Text next to scroll hint",
+      copySectionFeatured: "Featured work",
+      copyFeaturedKicker: "Small label above title",
+      copyFeaturedTitle: "Section title",
+      copyFeaturedSubtitle: "Subtitle (right column on wide screens)",
+      copySectionAbout: "About (#about)",
+      copyAboutKicker: "Small label",
+      copyAboutTitle: "Title",
+      copyAboutP1: "First paragraph",
+      copyAboutP2: "Second paragraph",
+      copySectionAlbums: "Albums (home)",
+      copyAlbumsKicker: "Small label above title",
+      copyAlbumsTitle: "Section title",
+      copyAlbumsEmpty: "Message when there are no albums",
+      copyAlbumsOpenSeries: "Hover line on card (open series)",
+      copySectionContact: "Contact (#contact)",
+      copyContactKicker: "Small label",
+      copyContactTitle: "Title",
+      copyContactIntro: "Intro text (left column)",
+      copyContactLocation: "Location (under email)",
+      copyContactLabelName: "Name field label",
+      copyContactLabelEmail: "Email field label",
+      copyContactLabelMessage: "Message field label",
+      copyContactPhName: "Name placeholder",
+      copyContactPhEmail: "Email placeholder",
+      copyContactPhMessage: "Message placeholder",
+      copyContactSubmit: "Submit button text",
+      copyContactMailPrefix: "Email subject prefix (mailto)",
+      copyContactMailFallback: "Subject if name empty",
+      copyContactPublicEmail: "Public email (display and contact form mailto)",
+      copyContactInstagramUrl: "Instagram — full URL (e.g. https://instagram.com/yourhandle/)",
+      copyContactInstagramLabel: "Instagram link label (e.g. Instagram)",
     },
   },
 };
